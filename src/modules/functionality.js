@@ -1,5 +1,5 @@
 /*eslint-disable*/
-export  class Functionality {
+class Functionality {
     static newTask() {
       const inputData = document.getElementById('text-section').value;
       const saveData = document.getElementById('text-form');
@@ -63,3 +63,4 @@ export  class Functionality {
     }
 
   }
+  export default Functionality;
