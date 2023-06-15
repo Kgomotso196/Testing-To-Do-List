@@ -13,7 +13,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -31,7 +30,7 @@
 
 # 📖 To-Do-List <a name="about-project"></a>
 
-**To-Do-List** is a tool used by developers to keep track of work that needs to be done, track progress, and prioritize tasks.
+**To-Do-List** is a tool used by developers to keep track of work that needs to be done, track progress, and prioritize tasks,Unit testing done using jest library.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -85,13 +84,8 @@
 - **Use npm as software packages system.**
 - **Build a website based on an existing website.**
 - **Add interactive list**
+- **Test functionality of addTask and removeTask functions**
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://kgomotso196.github.io/To-Do-List/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,7 +104,7 @@ In order to run this project you need:
 
 ### Setup
 
-Clone this repository to your desired folder: https://github.com/Kgomotso196/To-Do-List.git
+Clone this repository to your desired folder: https://github.com/Kgomotso196/Testing-To-Do-List.git
 
 ### Install
 
@@ -168,6 +162,10 @@ You can deploy this project using:
 - GitHub: [Troos](https://github.com/Kgomotso196/)
 - Twitter: [Troos](https://twitter.com/t_r_o_o_s)
 - LinkedIn: [Troos](https://linkedin.com/in/kgomotso-nacane/)
+
+- GitHub: [@githubhandle](https://github.com/cosywasswa)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/cosmas-wasswa-931a2761/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
