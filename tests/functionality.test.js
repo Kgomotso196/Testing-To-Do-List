@@ -49,33 +49,29 @@ describe('newTask', () => {
 });
 
 describe('removeTask functionality', () => {
-
   beforeEach(() => {
     // Clear localStorage before each test
     localStorage.clear();
   });
-    test('removeTask function should remove a task from the array and localStorage', () => {
+  test('removeTask function should remove a task from the array and localStorage', () => {
+    const tasks = [
+      { description: 'Task 1', completed: false, index: 1 },
+      { description: 'Task 2', completed: false, index: 2 },
+      { description: 'Task 3', completed: false, index: 3 },
+    ];
+    localStorage.setItem('data', JSON.stringify(tasks));
 
-      const tasks = [
-        { description: 'Task 1', completed: false, index: 1 },
-        { description: 'Task 2', completed: false, index: 2 },
-        { description: 'Task 3', completed: false, index: 3 },
-      ];
-      localStorage.setItem('data', JSON.stringify(tasks));
+    // Call the removeTask function to remove Task 2;
+    Functionality.removeTask(1);
 
-      // Call the removeTask function to remove Task 2;
-      Functionality.removeTask(1);
+    // Verify the task is removed from the array
+    const updatedTasks = Functionality.getAllTasks();
+    expect(updatedTasks).toHaveLength(2);
+    expect(updatedTasks[0].description).toBe('Task 1');
+    expect(updatedTasks[1].description).toBe('Task 3');
 
-
-      // Verify the task is removed from the array
-      const updatedTasks = Functionality.getAllTasks();
-      expect(updatedTasks).toHaveLength(2);
-      expect(updatedTasks[0].description).toBe('Task 1');
-      expect(updatedTasks[1].description).toBe('Task 3');
-
-      // Verify the task1 is not  removed from the DOM
-      const element1 = document.querySelector('#todo-holder li:first-child');
-      expect(element1).not.toBeNull();
-
-    });
+    // Verify the task1 is not  removed from the DOM
+    const element1 = document.querySelector('#todo-holder li:first-child');
+    expect(element1).not.toBeNull();
   });
+});
