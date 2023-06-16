@@ -1,22 +1,21 @@
-/*eslint-disable*/
-import _ from 'lodash'; /*eslint-disable*/
 import './style.css';
-import  Functionality from './modules/functionality';
+import Functionality from './modules/functionality.js';
+
 const taskContainer = document.getElementById('first-section');
 const submitButton = document.getElementById('for-button');
 const clearAllDone = document.getElementById('clear-all');
 let editButtonStats = false;
 window.onload = function windowReady() {
   Functionality.displayTask();
-  submitButton.onclick = function () {
+  submitButton.onclick = function Add() {
     Functionality.newTask();
   };
 
   taskContainer.addEventListener('click', (e) => {
-    const target = e.target;
+    const { target } = e;
     if (target && target.className === 'checkbox-class') {
       const ids = target.id.replace('checkbox-', '');
-      const description = document.getElementById('d' + ids);
+      const description = document.getElementById(`d${ids}`);
       const index = parseInt(ids, 10) - 1;
       Functionality.toggleTaskCompletion(index);
       if (description) {
@@ -29,49 +28,45 @@ window.onload = function windowReady() {
     }
   });
 
-
-taskContainer.addEventListener('click', (e) => {
-  if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
-    if (e.target.className === 'editButton') {
-      const ids = e.target.id.replace('editBttn-', '');
-      let description = document.getElementById('d' + ids);
-      let data = Functionality.getAllTasks();
-      const index = parseInt(ids, 10);
-      let editInput = document.getElementById('edit-' + ids);
-      description.style.display = 'none';
-      editInput.style.display = 'block';
-      if (editButtonStats !== false) {
-        Functionality.editDescription(data, index, editInput);
-        description.style.display = 'block';
-        editInput.style.display = 'none';
-        Functionality.updateTask(data);
-        Functionality.displayTask();
-        editButtonStats = false;
-      } else {
-        editButtonStats = true;
+  taskContainer.addEventListener('click', (e) => {
+    if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
+      if (e.target.className === 'editButton') {
+        const ids = e.target.id.replace('editBttn-', '');
+        const description = document.getElementById(`d${ids}`);
+        const data = Functionality.getAllTasks();
+        const index = parseInt(ids, 10);
+        const editInput = document.getElementById(`edit-${ids}`);
+        description.style.display = 'none';
+        editInput.style.display = 'block';
+        if (editButtonStats !== false) {
+          Functionality.editDescription(data, index, editInput);
+          description.style.display = 'block';
+          editInput.style.display = 'none';
+          Functionality.updateTask(data);
+          Functionality.displayTask();
+          editButtonStats = false;
+        } else {
+          editButtonStats = true;
+        }
       }
     }
-  }
-});
+  });
 
+  Functionality.displayTask();
+  taskContainer.addEventListener('click', (e) => {
+    if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
+      if (e.target.className === 'deleteButton') {
+        const ids = e.target.id.replace('delete-', '');
+        const data = Functionality.getAllTasks();
+        const index = parseInt(ids, 10);
+        if (data !== []) {
+          Functionality.removeTask(index - 1);
+        }
+      }
+    }
+  });
 
- Functionality.displayTask();
- taskContainer.addEventListener('click', (e) => {
-   if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
-     if (e.target.className === 'deleteButton') {
-       const ids = e.target.id.replace('delete-', '');
-       const data = Functionality.getAllTasks();
-       const index = parseInt(ids, 10);
-       if (data !== []) {
-         Functionality.removeTask(index-1);
-       }
-     }
-   }
- });
-
- clearAllDone.addEventListener('click', (e)=> {
-  Functionality.clearAllDoneFun();
-
- });
-
+  clearAllDone.addEventListener('click', () => {
+    Functionality.clearAllDoneFun();
+  });
 };

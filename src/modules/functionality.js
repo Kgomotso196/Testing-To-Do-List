@@ -1,14 +1,14 @@
-/*eslint-disable*/
 class Functionality {
   static newTask() {
     const inputData = document.getElementById('text-section').value;
     const saveData = document.getElementById('text-form');
     const storage = this.getAllTasks().length + 1;
-    const task = [{ description: inputData, completed: false, index: parseInt(storage) }];
+    const task = [{ description: inputData, completed: false, index: parseInt(storage, 10) }];
     this.saveTask(task);
     this.displayTask();
     saveData.reset();
   }
+
   static displayTask() {
     const div = document.querySelector('#todo-holder');
     div.innerHTML = '';
@@ -38,7 +38,6 @@ class Functionality {
     }
   }
 
-
   static saveTask(todo) {
     if (this.getAllTasks().length !== 0) {
       localStorage.setItem(
@@ -61,28 +60,28 @@ class Functionality {
     localStorage.clear();
     localStorage.setItem('data', JSON.stringify(newDatas));
   }
-  //Edit task description function
+
+  // Edit task description function
   static editDescription(data, index, editInput) {
     const updatedDescription = editInput.value.trim();
     if (updatedDescription !== '') {
       data[index - 1].description = updatedDescription;
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
-  //clear all done new function
+  // clear all done new function
   static clearAllDoneFun() {
     const data = Functionality.getAllTasks();
     const storage = data.filter((todo) => todo.completed === false);
-    for (let i = 0; i < storage.length; i++) {
+    for (let i = 0; i < storage.length; i += 1) {
       storage[i].index = i + 1;
     }
     this.updateTask(storage);
     this.displayTask();
   }
-  //Toggle completion function.
+  // Toggle completion function.
 
   static toggleTaskCompletion(index) {
     const data = Functionality.getAllTasks();
@@ -95,7 +94,5 @@ class Functionality {
       Functionality.updateTask(data);
     }
   }
-
-
 }
 export default Functionality;
