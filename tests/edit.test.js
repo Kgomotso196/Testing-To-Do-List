@@ -6,7 +6,6 @@ describe('editDescription', () => {
   let editInput;
 
   beforeEach(() => {
-    
     data = [
       { description: 'Task 1' },
       { description: 'Task 2' },
@@ -19,7 +18,7 @@ describe('editDescription', () => {
     const result = Functionality.editDescription(data, index, editInput);
 
     expect(data[index - 1].description).toBe('Updated Task');
-    
+
     expect(result).toBe(true);
   });
 
