@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <h3><b>To-Do-List</b></h3>
+  <h3><b>Testing-To-Do-List</b></h3>
 
 </div>
 
@@ -28,9 +28,9 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 To-Do-List <a name="about-project"></a>
+# 📖 Testing-To-Do-List <a name="about-project"></a>
 
-**To-Do-List** is a tool used by developers to keep track of work that needs to be done, track progress, and prioritize tasks,Unit testing done using jest library.
+**Testing-To-Do-List** is a tool used by developers to keep track of work that needs to be done, track progress, and prioritize tasks,Unit testing done using jest library.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -85,6 +85,7 @@
 - **Build a website based on an existing website.**
 - **Add interactive list**
 - **Test functionality of addTask and removeTask functions**
+- **Write unit tests for a JavaScript app.**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -163,6 +164,8 @@ You can deploy this project using:
 - Twitter: [Troos](https://twitter.com/t_r_o_o_s)
 - LinkedIn: [Troos](https://linkedin.com/in/kgomotso-nacane/)
 
+👤 **Cosmas**
+
 - GitHub: [@githubhandle](https://github.com/cosywasswa)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/cosmas-wasswa-931a2761/)
 
@@ -182,7 +185,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Kgomotso196/To-Do-List/issues/).
+Feel free to check the [issues page](https://github.com/Kgomotso196/Testing-To-Do-List/issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
