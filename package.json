@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "<a name=\"readme-top\"></a>",
   "private": "true",
-  "type": "module",
   "scripts": {
     "test": "jest",
     "watch": "webpack --watch",
